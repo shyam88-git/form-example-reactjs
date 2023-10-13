@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/CSS/index.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="upload-button">
+      <input type="file" id="upload" />
+      <label for="upload">
+        <div class="uploaded-image"></div>
+      </label>
+    </div>
+
+    <div class="button-container">
+      <button class="edit-button" onclick="window.location.href='/HTML/Registration.html'">Edit</button>
+      <button class="delete-button">Delete</button>
+    </div>
+
+    <div class="section">
+      <h2>Personal </h2>
+      <p>Mobile <span id="numberOutput"></span></p>
+      <p>Zip Code <span id="zipOutput"></span></p>
+    </div>
+
+    <div class="section">
+      <h2>Business Interests</h2>
+      <p>Activities: <span>
+        <ul id="selected-activities"></ul>
+      </span></p>
+      <p>Industries:</p>
+      <p>Location: </p>
+    </div>
+
+    <div class="section">
+      <h2>Financial</h2>
+      <p>Funding Source: </p>
+      <p>Budget:</p>
+    </div>
+
+    <div class="section">
+      <h2>Professional</h2>
+      <p>Company Name</p>
+      <p>Skills</p>
+    </div>
+  </div>
+
+  <script>
+    // Add JavaScript code here if needed
+    const urlParams = new URLSearchParams(window.location.search);
+    const numberValue = urlParams.get('mobile');
+    const zipCodeValue = urlParams.get('zipcode');
+
+    // Display the data on the page
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('numberOutput').textContent = numberValue;
+      document.getElementById('zipOutput').textContent = zipCodeValue;
+    });
+
+    
+  </script>
+</body>
+</html>
